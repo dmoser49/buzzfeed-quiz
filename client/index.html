@@ -103,12 +103,16 @@
       <br>
       <br>
       <br>
-      <form>
+
+      <form name="form">
         <div class="col-md-6">
           Enter your email address for results!
           <br>
-          <input type="email" name="email">
-          <button type="button" ng-click="submit()">Submit!</button>
+          <input type="email" name="input" ng-model="email" required>
+          <span class="error" ng-show="form.input.$error.required">Email Required!</span>
+          <span class="error" ng-show="form.input.$error.email">Not a Valid Email!</span>
+          <br>
+          <button type="button" novalidate ng-click="form.$valid && submit()">Submit!</button>
         </div>
       </form>
     </div>

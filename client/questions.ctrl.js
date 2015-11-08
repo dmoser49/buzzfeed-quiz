@@ -3,7 +3,9 @@
 
   .controller('QuestionsController', QuestionsController);
 
-  function QuestionsController($scope) {
+  function QuestionsController($scope, Questions) {
+    $scope.email;
+
     $scope.answers = {
       movie: "starWars",
       condiment: "ketchup",
@@ -54,38 +56,52 @@
     };
 
     $scope.submit = function(){
-      $scope.total = 0;
+      var total = 0;
       for (key in $scope.movie) {
         if ($scope.answers.movie === key) {
-          $scope.total += $scope.movie[key]
+          total += $scope.movie[key]
         };                                    
       };
       for (key in $scope.condiment) {
         if ($scope.answers.condiment === key) {
-          $scope.total += $scope.condiment[key]
+          total += $scope.condiment[key]
         };                                    
       };
       for (key in $scope.pet) {
         if ($scope.answers.pet === key) {
-          $scope.total += $scope.pet[key]
+          total += $scope.pet[key]
         };                                    
       };
       for (key in $scope.vacation) {
         if ($scope.answers.vacation === key) {
-          $scope.total += $scope.vacation[key]
+          total += $scope.vacation[key]
         };                                    
       };
       for (key in $scope.breakfast) {
         if ($scope.answers.breakfast === key) {
-          $scope.total += $scope.breakfast[key]
+          total += $scope.breakfast[key]
         };                                    
       };
       for (key in $scope.fruit) {
         if ($scope.answers.fruit === key) {
-          $scope.total += $scope.fruit[key]
+          total += $scope.fruit[key]
         };                                    
       };
-      console.log($scope.total)
+      var beer;
+      if (6 <= total && total < 10) {
+        beer = "IPA"
+      }
+      if (10 <= total && total < 14) {
+        beer = "Stout"
+      }
+      if (14 <= total && total < 18) {
+        beer = "Pale Ale"
+      }
+      if (18 <= total && total < 22) {
+        beer = "Hefeweizen"
+      }
+      var info = [beer, $scope.email]
+      Questions.sendEmail(info)
     };
   }
 

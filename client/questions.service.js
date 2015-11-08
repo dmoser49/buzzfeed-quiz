@@ -1,17 +1,21 @@
-(function(){
+angular.module('buzzfeed.service', [])
 
-  angular.module('buzzfeed.questionsService', [])
+.factory('Questions', function($http){
 
-  .factory('Questions', Questions)
-
-  function Questions($http) {
-
-    function sendEmail(email, total) {
-      console.log('sendingEmail')
-    }
+  var sendEmail = function(info) {
+    console.log("info: ", info)
+    return $http({
+      method:'POST',
+      url: '/api/submit',
+      data: info
+    })
+    .then(function(res) {
+      return res.data
+    })
   }
 
   return {
     sendEmail: sendEmail
   }
+
 })
