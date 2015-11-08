@@ -100,7 +100,10 @@
       if (18 <= total && total < 22) {
         beer = "Hefeweizen"
       }
-      var info = [beer, $scope.email]
+      var info = {
+        beer: beer,
+        email: $scope.email
+      };
       Questions.sendEmail(info)
     };
   }
