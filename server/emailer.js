@@ -16,7 +16,7 @@ module.exports = function(req) {
   console.log('created')
 
   var mailOptions = {
-    from: 'Beer Drinking Results! <danielmoser49@gmail.com>',
+    from: 'Beer Drinking Results! <1beer2beer3beer4@gmail.com>',
     to: req.body.email,
     subject: 'What Kind of Beer Drinker Are You Results!',
     text: 'You definitely prefer ' + req.body.beer + "'s. \n \nAlso you are cute ;)"
