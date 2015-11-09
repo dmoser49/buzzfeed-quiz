@@ -8,8 +8,8 @@ module.exports = function(req) {
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'danielmoser49@gmail.com',
-      pass: 'longhorn49'
+      user: '1beer2beer3beer4',
+      pass: 'beerbeerbeer'
     }
   });
 
