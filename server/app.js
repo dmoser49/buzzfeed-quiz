@@ -14,7 +14,7 @@ db.once('open', function (callback) {
   console.log('yay!')
 });
 
-app.use(express.static(__dirname + '/../client'));
+app.use('/', express.static(__dirname + '/../client'));
 app.use(bodyParser.json())
 
 require('./routes.js')(app)
