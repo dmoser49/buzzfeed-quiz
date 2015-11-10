@@ -4,20 +4,22 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body ng-controller="QuestionsController">
   <div class="container">
+  <div>
     <h1>What Kind of Beer Drinker Are You?</h1>
-    <div class="question">
+    <div class="container question">
       <h3>Movie: Star Wars, Star Trek, Harry Potter, or Lord of the Rings?</h3>
       <form class="checkbox">
-        <div class="col-md-4">
+        <div class="col-md-3 col-md-offset-3">
           <input type="radio" ng-model="answers.movie" value="starWars"> Star Wars
           <br>
           <input type="radio" ng-model="answers.movie" value="starTrek"> Star Trek
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <input type="radio" ng-model="answers.movie" value="harryPotter"> Harry Potter
           <br>
           <input type="radio" ng-model="answers.movie" value="lotr"> Lord of the Rings
@@ -25,15 +27,15 @@
       </form>
     </div>
     <br>
-    <div class="question">
+    <div class="container question">
       <h3>Condiment: Ketchup, Mustard, Mayonnaise, or BBQ sauce?</h3>
-      <form>
-        <div class="col-md-4">
+      <form class="checkbox">
+        <div class="col-md-3 col-md-offset-3">
           <input type="radio" ng-model="answers.condiment" value="ketchup"> Ketchup
           <br>
           <input type="radio" ng-model="answers.condiment" value="mustard"> Mustard
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <input type="radio" ng-model="answers.condiment" value="mayonnaise"> Mayonnaise
           <br>
           <input type="radio" ng-model="answers.condiment" value="bbqSauce"> BBQ Sauce
@@ -41,15 +43,15 @@
       </form>
     </div>
     <br>
-    <div class="question">
+    <div class="container question">
       <h3>Pet: Cats, Dogs, Fish, or Snakes?</h3>
-      <form>
-        <div class="col-md-4">
+      <form class="checkbox">
+        <div class="col-md-3 col-md-offset-3">
           <input type="radio" ng-model="answers.pet" value="cats"> Cats
           <br>
           <input type="radio" ng-model="answers.pet" value="dogs"> Dogs
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <input type="radio" ng-model="answers.pet" value="fish"> Fish
           <br>
           <input type="radio" ng-model="answers.pet" value="snakes"> Snakes
@@ -57,44 +59,44 @@
       </form>
     </div>
     <br>
-    <div class="question">
+    <div class="container question">
       <h3>Vacation: Mountains, Beach or Lake?</h3>
-      <form>
-        <div class="col-md-4">
+      <form class="checkbox">
+        <div class="col-md-3 col-md-offset-3">
           <input type="radio" ng-model="answers.vacation" value="mountains"> Mountains
           <br>
           <input type="radio" ng-model="answers.vacation" value="beach"> Beach
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <input type="radio" ng-model="answers.vacation" value="lake"> Lake
 
         </div>
       </form>
     </div>
     <br>
-    <div class="question">
+    <div class="container question">
       <h3>Breakfast: Pancakes, Waffles, or French Toast?</h3>
-      <form>
-        <div class="col-md-4">
+      <form class="checkbox">
+        <div class="col-md-3 col-md-offset-3">
           <input type="radio" ng-model="answers.breakfast" value="pancakes"> Pancakes
           <br>
           <input type="radio" ng-model="answers.breakfast" value="waffles"> Waffles
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <input type="radio" ng-model="answers.breakfast" value="frenchToast"> French Toast
         </div>
       </form>
     </div>
     <br>
-    <div class="question">
+    <div class="container question">
       <h3>Fruit: Apple, Orange, Pineapple, or Mango</h3>
-      <form>
-        <div class="col-md-4">
+      <form class="checkbox">
+        <div class="col-md-3 col-md-offset-3">
           <input type="radio" ng-model="answers.fruit" value="apple"> Apple
           <br>
           <input type="radio" ng-model="answers.fruit" value="orange"> Orange
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <input type="radio" ng-model="answers.fruit" value="pineapple"> Pineapple
           <br>
           <input type="radio" ng-model="answers.fruit" value="mango"> Mango
@@ -103,18 +105,19 @@
       <br>
       <br>
       <br>
+    </div>
 
-      <form name="form">
-        <div class="col-md-6">
-          Enter your email address for results!
-          <br>
-          <input type="email" name="input" ng-model="email" required>
-          <span class="error" ng-show="form.input.$error.required">Email Required!</span>
-          <span class="error" ng-show="form.input.$error.email">Not a Valid Email!</span>
-          <br>
-          <button type="button" novalidate ng-click="form.$valid && submit()">Submit!</button>
-        </div>
-      </form>
+    <form name="form" class="question">
+      <div class="col-md-offset-4 col-md-4">
+        <b>Enter your email address for results!</b>
+        <br>
+        <input type="email" name="input" ng-model="email" required>
+        <span class="error" ng-show="form.input.$error.required"><b>Email Required!<b></span>
+        <span class="error" ng-show="form.input.$error.email">Not a Valid Email!</span>
+        <br>
+        <button type="button" novalidate ng-click="form.$valid && submit()">Submit!</button>
+      </div>
+    </form>
     </div>
   </div>
 

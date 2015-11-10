@@ -1,0 +1,27 @@
+body {
+  background-image: url("http://www.ylakeland.com/wp-content/uploads/2015/09/o-PINT-GLASS-BEER-facebook.jpg")
+}
+
+.container {
+  font-weight: bold;
+  text-align: center;
+  width: 80%;
+  background-color: rgba(200, 200, 200, .4);
+  border-radius: 4px;
+  padding-bottom: 20px;
+};
+
+.question {
+  background-color: rgba(200, 200, 200, 1);
+}
+
+.form {
+  background-color: rgba(200, 200, 200, .3);
+}
+
+
+
+.checkbox {
+  text-align: left;
+}
+

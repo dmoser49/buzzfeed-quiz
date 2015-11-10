@@ -55,6 +55,14 @@
       mango: 4
     };
 
+    var sumTotal = function(question) {
+      for (answer in $scope.question) {
+        if ($scope.answers.question === answer) {
+          total += $scope.question[answer]
+        };
+      };
+    };
+
     $scope.submit = function(){
       var total = 0;
       for (key in $scope.movie) {
@@ -105,6 +113,7 @@
         email: $scope.email
       };
       Questions.sendEmail(info)
+      $scope.email = "";
     };
   }
 
